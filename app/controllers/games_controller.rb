@@ -20,6 +20,7 @@ class GamesController < ApplicationController
               elsif @all_the_letters == false
                 "Sorry but #{@word} can't be build out of #{params[:letters]}"
               else
+                session[:current_score] += @word.size
                 "Congratulations! #{@word} is a valid word!"
               end
   end
